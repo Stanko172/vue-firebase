@@ -20,7 +20,27 @@
             <br /><br />
 
             <a v-bind:href="url" v-bind:class="classes">FPMOZ</a> <br/>
-            <input :value="text" />
+            <input :value="text" />  
+
+            <br /><br />
+
+           <h1>Brojac:{{ counter }}</h1> <br /><br />
+           <button v-on:click="counter++">Povecaj</button>
+           <button v-on:click="counter--">Smanji</button>
+
+           <hr />
+
+           <button v-on:click="increase(2)">Povecaj za 2</button>
+           <button v-on:click="decrease(2)">Smanji za 2</button>
+
+           <hr />
+            <input v-model="amount" /><button v-on:click="increase()">Povecaj za unos</button><button v-on:click="decrease()">Smanji za unos</button>
+            Trenutna vrijednost unosa: <span v-if="amount !== ''">{{ amount }}</span><span v-else>0</span>
+
+            <hr />
+
+            <button @dblclick="counter++">Dvostruki klik - Povecaj</button>
+           <button  @dblclick="counter--">Dvostruki klik - Smanji</button>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
