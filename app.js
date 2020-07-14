@@ -7,7 +7,9 @@ vm = new Vue({
         classes: ['first', 'second'],
         text: "FPMOZ",
         counter: 0,
-        amount: ''
+        amount: '',
+        offsetX: 0,
+        offsetY: 0
     },
     methods: {
         greet(vrijeme){
@@ -27,6 +29,10 @@ vm = new Vue({
             }else{
                 this.counter -= amount
             }
+        },
+        scanCoords(e){
+            this.offsetX = e.offsetX
+            this.offsetY = e.offsetY
         }
     }
 })

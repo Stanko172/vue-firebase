@@ -10,6 +10,16 @@
         .second{
             text-decoration: none;
         }
+        .coords-container{
+            width: 500px;
+            height: 300px;
+            background: lightgrey;
+        }
+
+        .coords{
+            display: flex;
+            justify-content: space-around;
+        }
     </style>
     <body>
 
@@ -41,6 +51,15 @@
 
             <button @dblclick="counter++">Dvostruki klik - Povecaj</button>
            <button  @dblclick="counter--">Dvostruki klik - Smanji</button>
+
+           <hr />
+
+           <div class="coords-container" @mousemove="scanCoords">
+               <div class="coords">
+                    <div>OffsetX: {{ offsetX }} </div>
+                    <div>OffsetY: {{ offsetY }}</div>
+                </div>
+           </div>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
