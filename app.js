@@ -5,11 +5,28 @@ vm = new Vue({
         name: "Stanko Bebek",
         url: "https://fpmoz.sum.ba/index.php?lang=hr",
         classes: ['first', 'second'],
-        text: "FPMOZ"
+        text: "FPMOZ",
+        counter: 0,
+        amount: ''
     },
     methods: {
         greet(vrijeme){
             return `Dobro ${vrijeme}, ${this.name}`
+        },
+        increase(amount){
+            if(typeof amount === 'undefined'){
+                this.counter += parseInt(this.amount)
+            }else{
+                this.counter += amount 
+            }
+            
+        },
+        decrease(amount){
+            if(typeof amount === 'undefined'){
+                this.counter -= parseInt(this.amount)
+            }else{
+                this.counter -= amount
+            }
         }
     }
 })
