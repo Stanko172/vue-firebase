@@ -1,7 +1,16 @@
 vm = new Vue({
     el: "#app",
     data: {
-        title: "Hello Vue js World!"
+        title: "Hello Vue js World!",
+        name: "Stanko Bebek",
+        url: "https://fpmoz.sum.ba/index.php?lang=hr",
+        classes: ['first', 'second'],
+        text: "FPMOZ"
+    },
+    methods: {
+        greet(vrijeme){
+            return `Dobro ${vrijeme}, ${this.name}`
+        }
     }
 })
 
